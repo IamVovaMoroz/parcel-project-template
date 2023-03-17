@@ -20,10 +20,46 @@ img {
 button{
   cursor: pointer; border: none;
   background-color: lightgreen;
-
-  border-radius: 6px;
+  font-size: 120%;
+  border-radius: 10px;
  padding: 10px 32px;
  border: 1px solid black;
  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
  }
+
+.timer{display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 150%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  justify-content: center;
+  
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 20px;
+  
+  
+}
+
+.flatpickr-input{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: green;
+  text-align: center;
+  font-size: 110%;
+  border-radius: 15px;
+}
+
+.nx-message{
+  text-align: center;
+  font-size: 140%;
+  color: rgb(250, 213, 4);
+  border-radius: 15px;
+  
+}
 
