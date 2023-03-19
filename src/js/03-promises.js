@@ -5,7 +5,7 @@ let delayInput = null;
 let stepInput = null;
 let amountInput = null;
 
-// Функция создаем Promise
+// Функция создаем Promise пропускает через себя да и нет
 function createPromise (position, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -15,8 +15,8 @@ function createPromise (position, delay) {
       } else {
         reject({ position, delay });
       }
-      console.log(position);
-      console.log(delay);
+      // console.log(position);
+      // console.log(delay);
     }, delay);
   });
 }
