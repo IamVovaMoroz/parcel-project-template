@@ -1,57 +1,26 @@
-// let delayInputRef = document.querySelector('input[name="delay"]');
-// console.log((delayInputRef.value = 2));
-// let stepInputRef = document.querySelector('input[name="step"]');
-// console.log(stepInputRef);
-// let amountInputRef = document.querySelector('input[name="amount"]');
-// console.log(amountInputRef);
-// const startBtn = document.querySelector('button[type="submit"]');
-// console.log(startBtn);
-
-// // startBtn.addEventListener('submit');
-// function createPromise (position, delay) {
-//   const shouldResolve = Math.random() > 0.3;
-//   if (shouldResolve) {
-
-//     // Fulfill
-//   } else {
-//     // Reject
-//   }
-// }
-
-// function run (horse) {
-//   return new Promise(resolve => {
-//     const time = 2000;
-
-//     setInterval(() => {
-//       resolve(time + 2000);
-//     }, time);
-//   });
-// }
-
 import Notiflix from 'notiflix';
-
+// Создаём переменные с первоначальным значением null. Будет задаваться позже
 const form = document.querySelector('.form');
 let delayInput = null;
 let stepInput = null;
 let amountInput = null;
-// const firstDelayMs = document.querySelector('[name="delay"]');
-// const delayStepMs = document.querySelector('[name="step"]');
-// const amount = document.querySelector('[name="amount"]');
 
+// Функция создаем Promise
 function createPromise (position, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const shouldResolve = Math.random() > 0.3;
+      const shouldResolve = false;
       if (shouldResolve) {
         resolve({ position, delay });
       } else {
         reject({ position, delay });
       }
+      console.log(position);
     }, delay);
   });
 }
-form.addEventListener('submit', handleSubmit);
-function handleSubmit (event) {
+form.addEventListener('submit', formSubmit);
+function formSubmit (event) {
   event.preventDefault();
   const {
     elements: { delay, step, amount },
