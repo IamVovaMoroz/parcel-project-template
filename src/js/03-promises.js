@@ -9,13 +9,14 @@ let amountInput = null;
 function createPromise (position, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const shouldResolve = false;
+      const shouldResolve = Math.random() > 0.3;
       if (shouldResolve) {
         resolve({ position, delay });
       } else {
         reject({ position, delay });
       }
       console.log(position);
+      console.log(delay);
     }, delay);
   });
 }
@@ -26,8 +27,11 @@ function formSubmit (event) {
     elements: { delay, step, amount },
   } = event.currentTarget;
   let delayInput = Number(delay.value);
+  console.log(delayInput);
   let stepInput = Number(step.value);
+  console.log(stepInput);
   let amountInput = Number(amount.value);
+  console.log(amountInput);
 
   for (let i = 1; i <= amountInput; i += 1) {
     createPromise(i, delayInput)
