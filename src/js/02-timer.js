@@ -29,6 +29,7 @@ function onChoiceValidDate (selectedDates) {
   choosingDate = selectedDates.getTime();
   if (selectedDates < Date.now()) {
     Notify.failure('Please choose a date in the future');
+    buttonStart.setAttribute = disable;
   }
 
   if (selectedDates >= Date.now()) {
@@ -176,15 +177,3 @@ function addLeadingZero (value) {
 // //     console.log(selectedDates[0]);
 // //   },
 // // };
-
-// // let counter = 0;
-// // startBtn.addEventListener('click', () => {
-// //   if (counter === 10) {
-// //     console.log('все надоел, больше не буду считать!');
-// //     return;
-// //   }
-
-// //   console.log('нажал кнопку. нажми ещё раз, посчитаю');
-// //   counter += 1;
-// //   console.log(counter);
-// // });
